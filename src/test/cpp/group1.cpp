@@ -14,7 +14,7 @@ namespace euler {
                 test();
             }
         }
-        vector<function<void()>> tests;
+        vector<function<void()> > tests;
 
         void initializeTests() {
             // If we list all the natural numbers below 10 that are
