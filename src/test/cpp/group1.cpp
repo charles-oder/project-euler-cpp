@@ -2,6 +2,8 @@
 #include "test-util.cpp"
 #include <vector>
 #include <functional>
+#include <cmath>
+#include "math_helpers.h"
 
 using namespace std;
 
@@ -55,6 +57,21 @@ namespace euler {
                     previous = temp;
                 } while (current <= 4000000);
                 
+                ASSERT_EQUAL(answer, correctAnswer);
+            });
+            // The prime factors of 13195 are 5, 7, 13 and 29.
+            // What is the largest prime factor of the number 600851475143 ?
+            tests.push_back([](){
+                long long correctAnswer = 6857;
+                long long answer = 0;
+                long long testNumber = 600851475143;
+
+                for (long long i = sqrt(testNumber); i > 0; i--) {
+                    if (testNumber % i == 0 && isPrime(i)) {
+                        answer = i;
+                        break;
+                    }
+                }
                 ASSERT_EQUAL(answer, correctAnswer);
             });
         }
