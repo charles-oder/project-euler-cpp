@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <cmath>
+#include <string>
 
 template <class T>
 bool isPrime(T value) {
@@ -13,5 +14,32 @@ bool isPrime(T value) {
         }
     }
     return true;
+}
+
+template <class T>
+bool isPalindrome(T value) {
+    string str = to_string(value);
+    int n = str.length();
+    string reverse = str;
+    for (int i = 0; i < n / 2; i++) {
+        swap(reverse[i], reverse[n - i - 1]); 
+    }
+
+    return str == reverse; //.compare(reverseString) == 0;
+}
+
+
+template <class T>
+T largestPalindromeProduct(T max) {
+    T largest = 0;
+    for (T i = max; i > 0; i--) {
+        for (T j = max; j > 0; j--) {
+            T product = i * j;
+            if (isPalindrome(product) && product > largest) {
+                largest = product;
+            }
+        }
+    }
+    return largest;
 }
 #endif

@@ -74,6 +74,15 @@ namespace euler {
                 }
                 ASSERT_EQUAL(answer, correctAnswer);
             });
+            // A palindromic number reads the same both ways. The largest palindrome 
+            // made from the product of two 2-digit numbers is 9009 = 91 × 99.
+            // Find the largest palindrome made from the product of two 3-digit numbers.
+            tests.push_back([](){
+                long correctAnswer = 906609;
+                long answer = largestPalindromeProduct((long) 999);
+
+                ASSERT_EQUAL(answer, correctAnswer);
+            });
         }
     };
 }
