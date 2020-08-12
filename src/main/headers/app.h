@@ -6,7 +6,7 @@
 
 #include <string>
 
-namespace touch_gitignore {
+namespace euler {
     class Greeter {
         public:
         std::string greeting();

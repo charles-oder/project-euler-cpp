@@ -6,12 +6,12 @@
 #include <stdlib.h>
 #include "app.h"
 
-std::string touch_gitignore::Greeter::greeting() {
+std::string euler::Greeter::greeting() {
     return std::string("Hello, World!");
 }
 
 int main () {
-    touch_gitignore::Greeter greeter;
+    euler::Greeter greeter;
     std::cout << greeter.greeting() << std::endl;
     return 0;
 }
