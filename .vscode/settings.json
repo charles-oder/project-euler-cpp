@@ -40,6 +40,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "functional": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "__tuple": "cpp",
+        "__functional_03": "cpp"
     }
 }

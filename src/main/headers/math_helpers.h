@@ -42,4 +42,36 @@ T largestPalindromeProduct(T max) {
     }
     return largest;
 }
+
+template <class T>
+bool isDivisibleByAll(T value, vector<T> array) {
+    for (T e : array) {
+        if (value % e != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+template<class T>
+T findCommonProduct(T maxFactor) {
+    vector<T> primes;
+    for (T i = maxFactor; i >= 2; i--) {
+        if (isPrime(i)) {
+            primes.push_back(i);
+        }
+    }
+    vector<T> factors;
+    for (T e : primes) {
+        T val = 0;
+        for (T n = e; n <= maxFactor; n *= e) {
+            val = n;
+        }
+        factors.push_back(val);
+    }
+    T total = 1;
+    for (T f : factors) {
+        total *= f;
+    }
+    return total;
+}
 #endif
